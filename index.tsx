@@ -24,6 +24,7 @@ export type AwesomeWebChatbotConfig = {
   positionRight?: `${number}px` | string;
   positionBottom?: `${number}px` | string;
   baseUrl?: string;
+  hideOnLoad?: boolean;
 };
 
 type AwesomeWebChatbotProps = {
@@ -58,4 +59,24 @@ export default function AwesomeWebChatbot({
   }, [communityId, configJson]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return null;
+}
+
+export function awesomeqaInvokeAppearClosed() {
+  window.postMessage("awesomeqa-invoke-appear-closed", "*");
+}
+
+export function awesomeqaInvokeAppearOpened() {
+  window.postMessage("awesomeqa-invoke-appear-opened", "*");
+}
+
+export function awesomeqaInvokeOpen() {
+  window.postMessage("awesomeqa-invoke-open", "*");
+}
+
+export function awesomeqaInvokeClose() {
+  window.postMessage("awesomeqa-invoke-close", "*");
+}
+
+export function awesomeqaInvokeDisappear() {
+  window.postMessage("awesomeqa-invoke-disappear", "*");
 }
