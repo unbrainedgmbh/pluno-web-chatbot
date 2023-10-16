@@ -80,3 +80,7 @@ export function awesomeqaInvokeClose() {
 export function awesomeqaInvokeDisappear() {
   window.postMessage("awesomeqa-invoke-disappear", "*");
 }
+
+export function awesomeqaInvokeAppearOpenedWithDisappearOnClose() {
+  window.postMessage("awesomeqa-invoke-appear-opened-with-disappear-on-close", "*");
+}
