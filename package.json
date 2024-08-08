@@ -1,6 +1,6 @@
 {
   "name": "awesome-web-chatbot",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A react component to easily integrate AwesomeQA's web chatbot in your react app!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

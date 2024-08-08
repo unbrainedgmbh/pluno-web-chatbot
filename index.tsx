@@ -4,6 +4,7 @@ export type AwesomeWebChatbotConfig = {
   isWidgetEnabled?: boolean;
   firstMessage?: string;
   widgetTitle?: string;
+  disclaimer?: string;
   actions?: {
     contactSupport?: {
       title?: string;
@@ -44,7 +45,8 @@ export default function AwesomeWebChatbot({
     }
 
     const script = document.createElement("script");
-    const baseUrl = config?.baseUrl || "https://awesomeqa.xyz/";
+    let baseUrl = config?.baseUrl || "https://awesomeqa.xyz/";
+    if (!baseUrl.endsWith("/")) baseUrl += "/";
     script.src = baseUrl + "web-support/chat-widget.js";
     script.setAttribute("communityId", communityId);
     script.setAttribute("config", configJson);
