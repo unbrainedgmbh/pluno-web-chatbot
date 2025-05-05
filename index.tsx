@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export type AwesomeWebChatbotConfig = {
+export type PlunoWebChatbotConfig = {
   isWidgetEnabled?: boolean;
   firstMessage?: string;
   widgetTitle?: string;
@@ -29,15 +29,15 @@ export type AwesomeWebChatbotConfig = {
   allowNewMessageNotificationBadge?: boolean;
 };
 
-type AwesomeWebChatbotProps = {
+type PlunoWebChatbotProps = {
   communityId?: string;
-  config?: AwesomeWebChatbotConfig;
+  config?: PlunoWebChatbotConfig;
 };
 
-export default function AwesomeWebChatbot({
+export default function PlunoWebChatbot({
   communityId,
   config,
-}: AwesomeWebChatbotProps) {
+}: PlunoWebChatbotProps) {
   const configJson = JSON.stringify(config);
 
   useEffect(() => {
@@ -46,12 +46,12 @@ export default function AwesomeWebChatbot({
     }
 
     const script = document.createElement("script");
-    let baseUrl = config?.baseUrl || "https://awesomeqa.xyz/";
+    let baseUrl = config?.baseUrl || "https://app.pluno.ai/";
     if (!baseUrl.endsWith("/")) baseUrl += "/";
     script.src = baseUrl + "web-support/chat-widget.js";
     script.setAttribute("communityId", communityId);
     script.setAttribute("config", configJson);
-    script.id = "awesomeqa-chat-widget-script";
+    script.id = "pluno-chat-widget-script";
     script.async = true;
     document.body.appendChild(script);
 
@@ -64,29 +64,26 @@ export default function AwesomeWebChatbot({
   return null;
 }
 
-export function awesomeqaInvokeAppearClosed() {
-  window.postMessage("awesomeqa-invoke-appear-closed", "*");
+export function plunoInvokeAppearClosed() {
+  window.postMessage("pluno-invoke-appear-closed", "*");
 }
 
-export function awesomeqaInvokeAppearOpened() {
-  window.postMessage("awesomeqa-invoke-appear-opened", "*");
+export function plunoInvokeAppearOpened() {
+  window.postMessage("pluno-invoke-appear-opened", "*");
 }
 
-export function awesomeqaInvokeOpen() {
-  window.postMessage("awesomeqa-invoke-open", "*");
+export function plunoInvokeOpen() {
+  window.postMessage("pluno-invoke-open", "*");
 }
 
-export function awesomeqaInvokeClose() {
-  window.postMessage("awesomeqa-invoke-close", "*");
+export function plunoInvokeClose() {
+  window.postMessage("pluno-invoke-close", "*");
 }
 
-export function awesomeqaInvokeDisappear() {
-  window.postMessage("awesomeqa-invoke-disappear", "*");
+export function plunoInvokeDisappear() {
+  window.postMessage("pluno-invoke-disappear", "*");
 }
 
-export function awesomeqaInvokeAppearOpenedWithDisappearOnClose() {
-  window.postMessage(
-    "awesomeqa-invoke-appear-opened-with-disappear-on-close",
-    "*"
-  );
+export function plunoInvokeAppearOpenedWithDisappearOnClose() {
+  window.postMessage("pluno-invoke-appear-opened-with-disappear-on-close", "*");
 }
