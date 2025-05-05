@@ -26,6 +26,7 @@ export type AwesomeWebChatbotConfig = {
   positionBottom?: `${number}px` | string;
   baseUrl?: string;
   hideOnLoad?: boolean;
+  allowNewMessageNotificationBadge?: boolean;
 };
 
 type AwesomeWebChatbotProps = {
@@ -84,5 +85,8 @@ export function awesomeqaInvokeDisappear() {
 }
 
 export function awesomeqaInvokeAppearOpenedWithDisappearOnClose() {
-  window.postMessage("awesomeqa-invoke-appear-opened-with-disappear-on-close", "*");
+  window.postMessage(
+    "awesomeqa-invoke-appear-opened-with-disappear-on-close",
+    "*"
+  );
 }
