@@ -1,7 +1,7 @@
 {
-  "name": "awesome-web-chatbot",
-  "version": "1.0.7",
-  "description": "A react component to easily integrate AwesomeQA's web chatbot in your react app!",
+  "name": "pluno-web-chatbot",
+  "version": "1.0.8",
+  "description": "A react component to easily integrate Pluno's web chatbot in your react app!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "author": "AwesomeQA",
+  "author": "Pluno.ai",
   "license": "MIT",
   "dependencies": {
     "babel": "^6.23.0",

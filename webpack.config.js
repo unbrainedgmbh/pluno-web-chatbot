@@ -28,7 +28,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
-    library: "AwesomeWebChatbot",
+    library: "PlunoWebChatbot",
     libraryTarget: "umd",
     umdNamedDefine: true,
     globalObject: `(typeof self !== 'undefined' ? self : this)`,
