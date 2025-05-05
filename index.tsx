@@ -26,6 +26,7 @@ export type PlunoWebChatbotConfig = {
   positionBottom?: `${number}px` | string;
   baseUrl?: string;
   hideOnLoad?: boolean;
+  allowNewMessageNotificationBadge?: boolean;
 };
 
 type PlunoWebChatbotProps = {

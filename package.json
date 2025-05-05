@@ -1,6 +1,6 @@
 {
   "name": "pluno-web-chatbot",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A react component to easily integrate Pluno's web chatbot in your react app!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
