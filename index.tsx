@@ -1,5 +1,11 @@
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    removePlunoWidget?: () => void;
+  }
+}
+
 export type PlunoWebChatbotConfig = {
   isWidgetEnabled?: boolean;
   firstMessage?: string;
@@ -57,7 +63,14 @@ export default function PlunoWebChatbot({
 
     // Clean up function:
     return () => {
-      document.body.removeChild(script);
+      // Call the widget's cleanup function to remove DOM elements and event listeners
+      if (window.removePlunoWidget) {
+        window.removePlunoWidget();
+      }
+      // Remove the script element
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, [communityId, configJson]); // eslint-disable-line react-hooks/exhaustive-deps
 
